@@ -1,0 +1,3 @@
+PS C:\WINDOWS\system32> Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+paste the above command in WINDOWS POWERSHELL run as administrator. 
