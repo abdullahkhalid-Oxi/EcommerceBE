@@ -3,6 +3,7 @@ console.log("Connected!");
 const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
+const cors = require("cors");
 app.use(cors());
 app.use("/uploads", express.static(__dirname + "/uploads"));
 app.use(express.json());
@@ -10,7 +11,6 @@ const userRoutes = require("./routes/userRoutes");
 const productRoutes = require("./routes/productRoutes");
 const orderRoutes = require("./routes/orderRoutes");
 
-const cors = require("cors");
 require("dotenv").config();
 
 mongoose

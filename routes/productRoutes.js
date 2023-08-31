@@ -2,7 +2,7 @@ const express = require("express");
 const ProductModel = require("../modules/productModel");
 const UserModel = require("../modules/userModel");
 const protect = require("../middlewares/auth");
-const fetch = require("node:fetch");
+const fetch = require("node-fetch");d
 const mongoose = require("mongoose");
 
 const Productrouter = express.Router();
