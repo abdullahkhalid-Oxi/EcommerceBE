@@ -2,16 +2,20 @@ const express = require("express");
 const ProductModel = require("../modules/productModel");
 const UserModel = require("../modules/userModel");
 const protect = require("../middlewares/auth");
-const fetch = require("node-fetch");d
+import("node-fetch").then(fetchModule => {
+  const fetch = fetchModule.default;
+  // Now you can use the fetch function
+});
+
 const mongoose = require("mongoose");
 
 const Productrouter = express.Router();
 
 Productrouter.get("/all", async (req, res) => {
-  const allproducts = await ProductModel.find({});
-  if (allproducts.length) {
-    res.send({ message: "Product Find", ProductModel: allproducts });
-    console.log("Product Find", allproducts);
+  const allProducts = await ProductModel.find({});
+  if (allProducts.length) {
+    res.send({ message: "Product Find", ProductModel: allProducts });
+    console.log("Product Find", allProducts);
   } else {
     res.send({ message: "No Products Available" });
     console.log("No Products Available");
