@@ -17,7 +17,8 @@ const EditProduct = () => {
 
   const fetchSingleProduct = async () => {
     setLoading(true);
-    const response = await fetch(`http://localhost:8000/products/${id}`);
+    const response = await fetch(`/products/${id}`);
+    // local
     const data = await response.json();
     setSingleProduct(data.product);
     setLoading(false);
@@ -37,7 +38,8 @@ const EditProduct = () => {
     const file = ev.target.files[0];
     const formData = new FormData();
     formData.append("image", file);
-    const response = await fetch("http://localhost:8000/upload", {
+    const response = await fetch("/upload", {
+      // local
       method: "POST",
       body: formData,
     });
@@ -47,7 +49,8 @@ const EditProduct = () => {
 
   const handleSubmit = async () => {
     const productData = { ...singleProduct };
-    const response = await fetch(`http://localhost:8000/products/edit/${id}`, {
+    const response = await fetch(`/products/edit/${id}`, {
+      // local
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

@@ -19,14 +19,16 @@ const Product = () => {
 
   const fetchSingleProduct = async () => {
     setLoading(true);
-    const response = await fetch(`http://localhost:8000/products/${id}`);
+    const response = await fetch(`/products/${id}`);
+    // local
     const data = await response.json();
     setSingleProduct(data.product);
     setLoading(false);
   };
 
   const handleDelete = async () => {
-    const response = await fetch(`http://localhost:8000/products/${id}`, {
+    const response = await fetch(`/products/${id}`, {
+      // local
       method: "DELETE",
       headers: {
         Authorization: `Bearer ${token}`,

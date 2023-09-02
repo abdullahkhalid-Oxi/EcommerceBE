@@ -29,7 +29,8 @@ const AddProduct = () => {
     const file = ev.target.files[0];
     const formData = new FormData();
     formData.append("image", file);
-    const response = await fetch("http://localhost:8000/upload", {
+    const response = await fetch("/upload", {
+      // local
       method: "POST",
       body: formData,
     });
@@ -39,7 +40,8 @@ const AddProduct = () => {
 
   const handleSubmit = async () => {
     const productData = { productName, price: +price, description, image };
-    const response = await fetch("http://localhost:8000/products/add", {
+    const response = await fetch("/products/add", {
+      // local
       method: "POST",
       headers: {
         "Content-Type": "application/json",

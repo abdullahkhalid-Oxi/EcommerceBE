@@ -12,7 +12,7 @@ const ProductCard = ({ product, key }) => {
     <Card key={key} className="cardRoot">
       <Card.Img
         variant="top"
-        src={`http://localhost:8000/${product.image.split("public/")[1]}`}
+        src={`/${product.image.split("public/")[1]}`}
         // local
       />
       <Card.Body>

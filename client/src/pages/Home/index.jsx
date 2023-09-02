@@ -10,7 +10,8 @@ const Home = () => {
 
   const fetchProducts = async () => {
     setLoading(true);
-    const response = await fetch("http://localhost:8000/products/all");
+    const response = await fetch("/products/all");
+    // local
     const data = await response.json();
     setProducts(data.products);
     setLoading(false);
