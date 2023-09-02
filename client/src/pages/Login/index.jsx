@@ -24,6 +24,7 @@ const Login = () => {
 
   const handleSubmit = async () => {
     const userData = { userName, password };
+
     const response = await fetch("/users/login", {
       // local
       method: "POST",
@@ -32,6 +33,7 @@ const Login = () => {
       },
       body: JSON.stringify(userData),
     });
+    console.log(" submit click .. response = ", response)
     const data = await response.json();
     if (data.user) {
       localStorage.setItem("user", JSON.stringify(data.user));
@@ -73,7 +75,7 @@ const Login = () => {
         autoHideDuration={5000}
         // onClose={handleClose}
         message="Login Failed"
-        // action={action}
+      // action={action}
       />
     </div>
   );
