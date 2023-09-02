@@ -75,8 +75,4 @@ Userrouter.get("/all", async (req, res) => {
   res.send({ UserModel: allUsers });
 });
 
-module.exports = {
-  registerUser, // Export the registerUser function
-  loginUser, // Export the loginUser function
-  Userrouter, // Export the router
-};
+module.exports = Userrouter;
