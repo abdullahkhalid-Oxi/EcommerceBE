@@ -1,5 +1,6 @@
-const multer = require("multer");
 const express = require("express");
+const mongoose = require("mongoose");
+const multer = require("multer");
 const path = require("path");
 
 const uploadRouter = express.Router();
@@ -25,7 +26,6 @@ module.exports = uploadRouter;
 
 // const express = require("express");
 // const Orderrouter = express.Router();
-// const mongoose = require("mongoose");
 
 // const OrderModel = require("../modules/orderModel");
 

@@ -13,9 +13,12 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, "./client/dist")));
 
 app.get("*", function (_, res) {
-  res.sendFile(path.join(__dirname, "./client/dist/index.html"), function (err) {
-    res.status(500).send(err);
-  });
+  res.sendFile(
+    path.join(__dirname, "./client/dist/index.html"),
+    function (err) {
+      res.status(500).send(err);
+    }
+  );
 });
 
 const userRoutes = require("./routes/userRoutes");
@@ -34,9 +37,10 @@ app.get("/jail", (req, res) => {
 });
 
 // const router = require("./routes/users");
-app.use("/users", userRoutes.Userrouter);
-app.post("/register", userRoutes.registerUser);
-app.post("/login", userRoutes.loginUser);
-app.use("/products", productRoutes.Productrouter);
+app.use("/users", userRoutes);
+app.use("/products", productRoutes);
+app.use("/upload" , orderRoutes)
+// app.post("/register", userRoutes.registerUser);
+// app.post("/login", userRoutes.loginUser);
 
 app.listen(PORT, () => console.log("Server is running on PORT " + PORT));

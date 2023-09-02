@@ -73,6 +73,6 @@ Productrouter.get("/:id", async (req, res) => {
   res.send({ message: "Product Found", ProductModel: product });
 });
 
-module.exports = { Productrouter };
+module.exports =  Productrouter ;
 
 const jwt = require("jsonwebtoken");

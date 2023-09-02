@@ -6,7 +6,7 @@ const jwt = require("jsonwebtoken");
 const { UserModel } = require("../modules/userModel");
 
 //REGISTER USER
-const registerUser = async (req, res) => {
+Userrouter.post("/register", async (req, res) => {
   const saltRounds = 10;
   const userName = req.body.userName;
   const password = req.body.password;
@@ -29,10 +29,10 @@ const registerUser = async (req, res) => {
   console.log("Saved " + saved);
 
   res.send({ message: "User register Successfully ", UserModel: saved });
-};
+});
 
 //LOGIN USER
-const loginUser = async (req, res) => {
+Userrouter.post("/login", async (req, res) => {
   const userName = req.body.userName;
   const password = req.body.password;
 
@@ -59,14 +59,21 @@ const loginUser = async (req, res) => {
       console.log("User LOGED IN", isUser);
       console.log("token", token);
     } else {
-      res.send({ message: "Wrong Password is being Entered" , match});
+      res.send({ message: "Wrong Password is being Entered", match });
       console.log("Wrong Password is being Entered");
     }
   } else {
     console.log("User Not Available");
     res.send({ message: "User Not Availale!" });
   }
-};
+});
+
+Userrouter.get("/all", async (req, res) => {
+  const allUsers = await UserModel.findOne({
+    userName: { $regex: "Abdullah" },
+  });
+  res.send({ UserModel: allUsers });
+});
 
 module.exports = {
   registerUser, // Export the registerUser function
