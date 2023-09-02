@@ -55,7 +55,7 @@ const AddProduct = () => {
 
   useEffect(() => {
     const user = localStorage.getItem("user");
-    if (!user) {
+    if (user) {
       navigate("/login");
     }
   });
