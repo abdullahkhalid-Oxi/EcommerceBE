@@ -66,7 +66,7 @@ const Login = () => {
           variant="outlined"
         />
         <Button onClick={handleSubmit} fullWidth variant="contained">
-          Login
+          LOGIN
         </Button>
       </Container>
       <Snackbar
