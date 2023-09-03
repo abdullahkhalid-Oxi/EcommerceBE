@@ -15,17 +15,16 @@ const Login = () => {
 
   const handleChange = (ev) => {
     const { value, name } = ev.target;
-    if (name == "userName") {
+    if (name === "userName") {
       setUserName(value);
     }
-    if (name == "password") {
+    if (name === "password") {
       setPassword(value);
     }
   };
 
   const handleSubmit = async () => {
     const userData = { userName, password };
-
     const response = await fetch("/users/login", {
       // local
       method: "POST",
@@ -38,9 +37,12 @@ const Login = () => {
     const data = await response.json();
     if (data.UserModel) {
       localStorage.setItem("user", JSON.stringify(data.UserModel));
-      localStorage.setItem("token", JSON.stringify(data.token));
+      // localStorage.setItem("token", JSON.stringify(data.token));
       navigate("/addproduct");
       return;
+    }
+    else{
+      console.log("Data" , data)
     }
     setOpen(true);
   };
@@ -70,6 +72,7 @@ const Login = () => {
           LOGIN
         </Button>
       </Container>
+
       <Snackbar
         open={open}
         anchorOrigin={{ vertical: "top", horizontal: "right" }}

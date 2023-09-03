@@ -48,16 +48,16 @@ Userrouter.post("/login", async (req, res) => {
   if (isUser) {
     const match = await bcrypt.compare(password, isUser.password);
     if (match) {
-      const token = jwt.sign({ _id: isUser._id }, "12345", {
-        expiresIn: "10d",
-      });
+      // const token = jwt.sign({ _id: isUser._id }, "12345", {
+      //   expiresIn: "10d",
+      // });
       res.send({
         UserModel: isUser,
         message: "LOGIN SUCCESSFULLY",
-        token: token,
+        // token: token,
       });
       console.log("User LOGED IN", isUser);
-      console.log("token", token);
+      // console.log("token", token);
     } else {
       res.send({ message: "Wrong Password is being Entered", match });
       console.log("Wrong Password is being Entered");
