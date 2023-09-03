@@ -1,14 +1,14 @@
 import { useState } from "react";
 import Container from "react-bootstrap/Container";
-import "./login.css";
+import "./register.css";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { useNavigate } from "react-router";
 import Snackbar from "@mui/material/Snackbar";
-import UserModel from "../../../../modules/userModel";
+// import UserModel from "../../../../modules/userModel";
 
 
-const Login = () => {
+const RegisterUser = () => {
   const navigate = useNavigate();
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
@@ -27,7 +27,7 @@ const Login = () => {
   const handleSubmit = async () => {
     const userData = { userName, password };
 
-    const response = await fetch("/users/login", {
+    const response = await fetch("/users/register", {
       // local
       method: "POST",
       headers: {
@@ -49,7 +49,7 @@ const Login = () => {
   return (
     <div>
       <Container className="rootContainer">
-        <h4>Login Page</h4>
+        <h4>Register Page</h4>
         <TextField
           fullWidth
           value={userName}
@@ -68,7 +68,7 @@ const Login = () => {
           variant="outlined"
         />
         <Button onClick={handleSubmit} fullWidth variant="contained">
-          LOGIN
+          Register Now
         </Button>
       </Container>
       <Snackbar
@@ -83,4 +83,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default RegisterUser;
