@@ -5,7 +5,6 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { useNavigate } from "react-router";
 import Snackbar from "@mui/material/Snackbar";
-import UserModel from "../../../../modules/userModel";
 
 
 const Login = () => {

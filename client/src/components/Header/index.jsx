@@ -29,7 +29,7 @@ function Header() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="https://aggressive-colt-hose.cyclic.app/addproduct">Add Product</Nav.Link>
+            <Nav.Link href="https://aggressive-colt-hose.cyclic.app/addproduct">ADD Product</Nav.Link>
             <Nav.Link href="https://aggressive-colt-hose.cyclic.app/login">Login</Nav.Link>
           </Nav>
         </Navbar.Collapse>
