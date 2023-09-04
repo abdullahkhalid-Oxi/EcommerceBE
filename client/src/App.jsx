@@ -7,6 +7,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AddProduct from "./pages/AddProduct";
 import { ProductContainer } from "./Context/ProductContext";
 import Login from "./pages/Login";
+import RegisterUser from "./pages/RegisterUser";
+
 import EditProduct from "./pages/EditProduct";
 
 function App() {
@@ -22,6 +24,7 @@ function App() {
               <Route path="/products/edit/:id" element={<EditProduct />} />
               <Route path="/addproduct" element={<AddProduct />} />
               <Route path="/login" element={<Login />} />
+              <Route path="/registeruser" element={<RegisterUser />} />
               <Route path="/" element={<Home />} />
             </Routes>
           </ProductContainer>

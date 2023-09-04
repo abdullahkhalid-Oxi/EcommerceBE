@@ -28,7 +28,7 @@ Userrouter.post("/register", async (req, res) => {
   const saved = await savedUser.save();
   console.log("Saved " + saved);
 
-  res.send({ message: "User register Successfully ", UserModel: saved });
+  res.send({ message: "User register Successfully", UserModel: saved });
 });
 
 //LOGIN USER

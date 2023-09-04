@@ -12,7 +12,7 @@ const RegisterUser = () => {
   const navigate = useNavigate();
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
-  const [open, setOpen] = useState(false);
+  // const [open, setOpen] = useState(false);
 
   const handleChange = (ev) => {
     const { value, name } = ev.target;
@@ -37,10 +37,9 @@ const RegisterUser = () => {
     });
     console.log(" submit click .. response = ", response)
     const data = await response.json();
-    if (data.UserModel) {
-      localStorage.setItem("user", JSON.stringify(data.UserModel));
-      localStorage.setItem("token", JSON.stringify(data.token));
-      navigate("/addproduct");
+    if (data.message === "User register Successfully") {
+      <h2>USER REGISTER SUCCESSFULL</h2>
+      navigate("/login");
       return;
     }
     setOpen(true);
@@ -71,14 +70,14 @@ const RegisterUser = () => {
           Register Now
         </Button>
       </Container>
-      <Snackbar
+      {/* <Snackbar
         open={open}
         anchorOrigin={{ vertical: "top", horizontal: "right" }}
         autoHideDuration={5000}
         // onClose={handleClose}
         message="Login Failed"
       // action={action}
-      />
+      /> */}
     </div>
   );
 };

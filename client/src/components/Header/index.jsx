@@ -31,6 +31,7 @@ function Header() {
           <Nav className="me-auto">
             <Nav.Link href="https://aggressive-colt-hose.cyclic.app/addproduct">ADD Product</Nav.Link>
             <Nav.Link href="https://aggressive-colt-hose.cyclic.app/login">Login</Nav.Link>
+            <Nav.Link href="https://aggressive-colt-hose.cyclic.app/registeruser">Register User</Nav.Link>
           </Nav>
         </Navbar.Collapse>
         <Button variant="primary" onClick={() => navigate("/cart")}>

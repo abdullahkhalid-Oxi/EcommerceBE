@@ -41,8 +41,8 @@ const Login = () => {
       navigate("/addproduct");
       return;
     }
-    else{
-      console.log("Data" , data)
+    else {
+      console.log("Data", data)
     }
     setOpen(true);
   };
