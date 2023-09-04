@@ -14,10 +14,10 @@ const Productrouter = express.Router();
 Productrouter.get("/all", async (req, res) => {
   const allProducts = await ProductModel.find({});
   if (allProducts.length) {
-    res.send({ message: "Product Find", ProductModel: allProducts });
+    res.status(201).send({ message: "Product Find", ProductModel: allProducts });
     console.log("Product Find", allProducts);
   } else {
-    res.send({ message: "No Products Available" });
+    res.status(201).send({ message: "No Products Available" });
     console.log("No Products Available");
   }
 });
