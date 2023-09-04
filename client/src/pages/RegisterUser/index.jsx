@@ -25,25 +25,37 @@ const RegisterUser = () => {
   };
 
   const handleSubmit = async () => {
-    const userData = { userName, password };
-
-    const response = await fetch("/users/register", {
-      // local
-      method: "POST",
+    const response = await fetch("/jail", {
+      method: "GET",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(userData),
+      // body: JSON.stringify
     });
     console.log(" submit click .. response = ", response)
-    const data = await response.json();
-    if (data.message === "User register Successfully") {
-      <h2>USER REGISTER SUCCESSFULL</h2>
-      navigate("/login");
-      return;
-    }
-    setOpen(true);
-  };
+  }
+
+  // const handleSubmit = async () => {
+  //   const userData = { userName, password };
+
+  //   const response = await fetch("/users/register", {
+  //     // local
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify(userData),
+  //   });
+  //   console.log(" submit click .. response = ", response)
+  //   const data = await response.json();
+  //   if (data.message === "User register Successfully") {
+  //     <h2>USER REGISTER SUCCESSFULL</h2>
+  //     navigate("/login");
+  //     return;
+  //   }
+  //   setOpen(true);
+  // };
+
 
   return (
     <div>
