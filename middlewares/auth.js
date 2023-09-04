@@ -23,7 +23,7 @@ const protect = async (req, res, next) => {
   }
 
   if (!token) {
-    res.status(401).send({ message: "No Token." });
+    res.status(401).send({ message: "No Token.nn" });
   }
 };
 

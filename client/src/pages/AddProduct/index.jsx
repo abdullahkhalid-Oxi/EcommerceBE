@@ -39,7 +39,8 @@ const AddProduct = () => {
   };
 
   const handleSubmit = async () => {
-    const productData = { productName, productPrice, productDescription, productImage };
+    // const productData = { productName, productPrice, productDescription, productImage };
+    const productData = { productName, productPrice, productDescription };
     const response = await fetch("/products/add", {
       // local
       method: "POST",
@@ -64,7 +65,7 @@ const AddProduct = () => {
   return (
     <div>
       <Container className="rootContainer">
-        <h4>Add Product Form</h4>
+        <h4>Add Product Form..</h4>
         <TextField
           fullWidth
           value={productName}

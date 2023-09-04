@@ -2,7 +2,7 @@ const express = require("express");
 const ProductModel = require("../modules/productModel");
 const UserModel = require("../modules/userModel");
 const protect = require("../middlewares/auth");
-import("node-fetch").then(fetchModule => {
+import("node-fetch").then((fetchModule) => {
   const fetch = fetchModule.default;
   // Now you can use the fetch function
 });
@@ -22,7 +22,8 @@ Productrouter.get("/all", async (req, res) => {
   }
 });
 
-Productrouter.post("/add", protect, async (req, res) => {
+// Productrouter.post("/add", protect, async (req, res) => {
+Productrouter.post("/add", async (req, res) => {
   const productName = req.body.ProductName;
   const productPrice = req.body.productPrice;
   const productDescription = req.body.productDescription;
@@ -48,7 +49,7 @@ Productrouter.put("/edit/:id", protect, async (req, res) => {
     product.productName = req.body.ProductName;
     product.productPrice = req.body.productPrice;
     product.productDescription = req.body.productDescription;
-    product.productImage = req.body.productImage;
+    // product.productImage = req.body.productImage;
     const SavedProduct = await product.save;
     res.send({ message: "Product Edited", ProductModel: SavedProduct });
   } else {
@@ -73,6 +74,6 @@ Productrouter.get("/:id", async (req, res) => {
   res.send({ message: "Product Found", ProductModel: product });
 });
 
-module.exports =  Productrouter ;
+module.exports = Productrouter;
 
 const jwt = require("jsonwebtoken");
