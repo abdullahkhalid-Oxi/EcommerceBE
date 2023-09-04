@@ -83,7 +83,7 @@ const AddProduct = () => {
         />
         <TextField
           fullWidth
-          value={description}
+          value={productDescription}
           onChange={handleChange}
           multiline
           rows={4}

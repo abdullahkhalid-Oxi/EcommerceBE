@@ -93,11 +93,11 @@ const EditProduct = () => {
         />
         <TextField
           fullWidth
-          value={singleProduct.description}
+          value={singleProduct.productDescription}
           onChange={handleChange}
           multiline
           rows={4}
-          name="description"
+          name="productDescription"
           id="outlined-basic"
           variant="outlined"
         />

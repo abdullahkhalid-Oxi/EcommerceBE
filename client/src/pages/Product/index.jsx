@@ -71,7 +71,7 @@ const Product = () => {
             <h3>{singleProduct.productName}</h3>
             <img src={singleProduct.image} />
             <h3>Rs. {singleProduct.price}</h3>
-            <p>{singleProduct.description}</p>
+            <p>{singleProduct.productDescription}</p>
             <Button onClick={() => addToCart(singleProduct)} variant="primary">
               Add to Cart
             </Button>
