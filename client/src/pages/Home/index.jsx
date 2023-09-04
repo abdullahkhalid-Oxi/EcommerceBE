@@ -12,8 +12,10 @@ const Home = () => {
     setLoading(true);
     const response = await fetch("/products/all");
     // local
+    console.log("Response of home page ", response);
     const data = await response.json();
-    setProducts(data.products);
+    console.log("Data from home page ", data)
+    setProducts(data.productModel);
     setLoading(false);
   };
 
@@ -35,7 +37,7 @@ const Home = () => {
           <>
             <div className="productWrapper">
               {products.map((product, index) => {
-                return <ProductCard key={index} product={product} />;
+                return <ProductCard key={index} productModel={product} />;
               })}
             </div>
           </>

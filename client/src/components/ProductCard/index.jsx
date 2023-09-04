@@ -10,11 +10,11 @@ const ProductCard = ({ product, key }) => {
   const { addToCart } = cartContext;
   return (
     <Card key={key} className="cardRoot">
-      <Card.Img
+      {/* <Card.Img
         variant="top"
         src={`/${product.image.split("public/")[1]}`}
-        // local
-      />
+      // local
+      /> */}
       <Card.Body>
         <Link to={`/products/${product._id}`}>
           <Card.Title>{product.productName}</Card.Title>
