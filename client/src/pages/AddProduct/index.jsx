@@ -81,7 +81,7 @@ const AddProduct = () => {
           label="price"
           variant="outlined"
         />
-        <TextField
+        {/* <TextField
           fullWidth
           value={description}
           onChange={handleChange}
@@ -91,7 +91,7 @@ const AddProduct = () => {
           id="outlined-basic"
           label="Description"
           variant="outlined"
-        />
+        /> */}
         <TextField
           fullWidth
           onChange={handleUpload}

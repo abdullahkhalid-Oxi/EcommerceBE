@@ -26,13 +26,13 @@ Productrouter.post("/add", protect, async (req, res) => {
   const productName = req.body.ProductName;
   const productPrice = req.body.productPrice;
   const productDescription = req.body.productDescription;
-  const productImage = req.body.productImage;
+  // const productImage = req.body.productImage;
 
   const productData = {
     productName,
     productPrice,
     productDescription,
-    productImage,
+    // productImage,
   };
   const productInstance = new ProductModel(productData);
   const SavedProduct = await productInstance.save();
