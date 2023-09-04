@@ -8,19 +8,19 @@ import { useNavigate } from "react-router";
 const AddProduct = () => {
   const navigate = useNavigate();
   const [productName, setProductName] = useState("");
-  const [price, setPrice] = useState("");
-  const [description, setDescription] = useState("");
-  const [image, setImage] = useState("");
+  const [productPrice, setPrice] = useState("");
+  const [productDescription, setDescription] = useState("");
+  const [productImage, setImage] = useState("");
 
   const handleChange = (ev) => {
     const { value, name } = ev.target;
     if (name == "productName") {
       setProductName(value);
     }
-    if (name == "price") {
+    if (name == "productPrice") {
       setPrice(value);
     }
-    if (name == "description") {
+    if (name == "productDescription") {
       setDescription(value);
     }
   };
@@ -77,8 +77,8 @@ const AddProduct = () => {
           fullWidth
           onChange={handleChange}
           value={price}
-          name="price"
-          label="price"
+          name="productPrice"
+          label="productPrice"
           variant="outlined"
         />
         <TextField
@@ -87,9 +87,9 @@ const AddProduct = () => {
           onChange={handleChange}
           multiline
           rows={4}
-          name="description"
+          name="productDescription"
           id="outlined-basic"
-          label="Description"
+          label="productDescription"
           variant="outlined"
         />
         {/* <TextField
