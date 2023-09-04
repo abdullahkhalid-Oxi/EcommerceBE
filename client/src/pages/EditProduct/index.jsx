@@ -10,9 +10,9 @@ const EditProduct = () => {
   const [loading, setLoading] = useState(false);
   const [singleProduct, setSingleProduct] = useState({});
   const [productName, setProductName] = useState("");
-  const [price, setPrice] = useState("");
-  const [description, setDescription] = useState("");
-  const [image, setImage] = useState("");
+  const [productPrice, setPrice] = useState("");
+  const [productDescription, setDescription] = useState("");
+  const [productImage, setImage] = useState("");
   const { id } = useParams();
 
   const fetchSingleProduct = async () => {
@@ -87,8 +87,8 @@ const EditProduct = () => {
         <TextField
           fullWidth
           onChange={handleChange}
-          value={singleProduct.price}
-          name="price"
+          value={singleProduct.productPrice}
+          name="productPrice"
           variant="outlined"
         />
         <TextField

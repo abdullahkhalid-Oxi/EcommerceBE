@@ -76,7 +76,7 @@ const AddProduct = () => {
         <TextField
           fullWidth
           onChange={handleChange}
-          value={price}
+          value={productPrice}
           name="productPrice"
           label="productPrice"
           variant="outlined"

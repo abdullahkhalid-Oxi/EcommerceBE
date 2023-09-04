@@ -19,7 +19,7 @@ const ProductCard = ({ product, key }) => {
         <Link to={`/products/${product._id}`}>
           <Card.Title>{product.productName}</Card.Title>
         </Link>
-        <Card.Text>Rs. {product.price}</Card.Text>
+        <Card.Text>Rs. {product.productPrice}</Card.Text>
         <Button variant="primary" onClick={() => addToCart(product)}>
           Add to Cart
         </Button>
