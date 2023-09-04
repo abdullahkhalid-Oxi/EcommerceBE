@@ -39,7 +39,7 @@ const AddProduct = () => {
   };
 
   const handleSubmit = async () => {
-    const productData = { productName, productPrice: +productPrice, productDescription, productImage };
+    const productData = { productName, productPrice, productDescription, productImage };
     const response = await fetch("/products/add", {
       // local
       method: "POST",
