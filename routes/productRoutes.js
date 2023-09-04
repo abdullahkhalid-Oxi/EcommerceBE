@@ -24,7 +24,7 @@ Productrouter.get("/all", async (req, res) => {
 
 // Productrouter.post("/add", protect, async (req, res) => {
 Productrouter.post("/add", async (req, res) => {
-  const productName = req.body.ProductName;
+  const productName = req.body.productName;
   const productPrice = req.body.productPrice;
   const productDescription = req.body.productDescription;
   // const productImage = req.body.productImage;
@@ -46,7 +46,7 @@ Productrouter.put("/edit/:id", protect, async (req, res) => {
   const product = await ProductModel.findOne({ _id: productId });
 
   if (product) {
-    product.productName = req.body.ProductName;
+    product.productName = req.body.productName;
     product.productPrice = req.body.productPrice;
     product.productDescription = req.body.productDescription;
     // product.productImage = req.body.productImage;

@@ -51,6 +51,7 @@ const AddProduct = () => {
       },
       body: JSON.stringify(productData),
     });
+    console.log("body", body);
     console.log("response", response);
   };
 
