@@ -39,14 +39,14 @@ const AddProduct = () => {
   };
 
   const handleSubmit = async () => {
-    const productData = { productName, price: +price, description, image };
+    const productData = { productName, productPrice: +productPrice, productDescription, productImage };
     const response = await fetch("/products/add", {
       // local
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGJjYWZlY2MyYTM1M2NlMzgzNmE2Y2EiLCJpYXQiOjE2OTAwOTQ1NjQsImV4cCI6MTY5MjY4NjU2NH0.mRRJfx_UvpCPq0cxJSeOt7W12XfQyThQT3gORPxFmE0",
+        // Authorization:
+        // "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGJjYWZlY2MyYTM1M2NlMzgzNmE2Y2EiLCJpYXQiOjE2OTAwOTQ1NjQsImV4cCI6MTY5MjY4NjU2NH0.mRRJfx_UvpCPq0cxJSeOt7W12XfQyThQT3gORPxFmE0",
       },
       body: JSON.stringify(productData),
     });
@@ -55,7 +55,7 @@ const AddProduct = () => {
 
   useEffect(() => {
     // const user = localStorage.getItem("user");
-    const user =true; 
+    const user = true;
     if (!user) {
       navigate("/login");
     }
