@@ -36,14 +36,15 @@ const { UserModel } = require("../modules/userModel");
   const saltRounds = 10;
   const userName = req.body.userName;
   const password = req.body.password;
-
-  const existenceUser = await UserModel.findOne({ userName });
-
-  if (existenceUser) {
-    res.send({ message: "User Already available" });
-    console.log("User Already available");
-    return;
-  }
+    console.log("naam from req" , userName)
+    console.log("PASS from req" , password)
+  // const existenceUser = await UserModel.findOne({ userName });
+  
+  // if (existenceUser) {
+  //   res.send({ message: "User Already available" });
+  //   console.log("User Already available");
+  //   return;
+  // }
 
   const tempPassword = await bcrypt.hash(password, saltRounds);
 
