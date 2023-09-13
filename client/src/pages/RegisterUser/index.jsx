@@ -12,14 +12,14 @@ const RegisterUser = () => {
   const navigate = useNavigate();
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
-  // const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false);
 
   const handleChange = (ev) => {
     const { value, name } = ev.target;
-    if (name == "userName") {
+    if (name === "userName") {
       setUserName(value);
     }
-    if (name == "password") {
+    if (name === "password") {
       setPassword(value);
     }
   };
@@ -38,20 +38,32 @@ const RegisterUser = () => {
   const handleSubmit = async () => {
     const userData = { userName, password };
 
-    const response = await fetch("/register", {
-      // local
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(userData),
-    });
-    console.log(" submit click .. response = ", response)
-    const data = await response.json();
-    if (data.message === "User register Successfully") {
-      <h2>USER REGISTER SUCCESSFULL</h2>
-      navigate("/login");
-      return;
+    try {
+      const response = await fetch("/register", {
+        // local
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(userData),
+      });
+      if (response.ok) {
+        console.log(" submit click .. response = ", response)
+        const data = await response.json();
+        console.log("REGister succesfully");
+        navigate("/login");
+        return;
+      }
+      else {
+        // Registration failed, handle accordingly
+        const errorData = await response.json();
+        console.error('Registration error:', errorData);
+        // Show an error message to the user
+      }
+    }
+    catch (error) {
+      console.error('TRY CATCH KA ERROR:', error);
+      // Handle network or other errors
     }
     setOpen(true);
   };
@@ -60,7 +72,7 @@ const RegisterUser = () => {
   return (
     <div>
       <Container className="rootContainer">
-        <h4>Register Page</h4>
+        <h4>Register Page,,,</h4>
         <TextField
           fullWidth
           value={userName}

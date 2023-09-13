@@ -101,4 +101,4 @@ const { UserModel } = require("../modules/userModel");
 //   res.send({ UserModel: allUsers });
 // });
 
-module.exports = Userrouter;
+// module.exports = Userrouter;
