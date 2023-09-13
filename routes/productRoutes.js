@@ -11,9 +11,9 @@ const mongoose = require("mongoose");
 
 const Productrouter = express.Router();
 
-Productrouter.get("/all", async (req, res) => {
+Productrouter.get ("/all", async (req, res) => {
   const allProducts = await ProductModel.find({});
-  if (allProducts.length) {
+  if (allProducts.length > 1) {
     res.status(201).send({ message: "Product Find", ProductModel: allProducts });
     console.log("Product Find", allProducts);
   } else {
@@ -38,7 +38,7 @@ Productrouter.post("/add", async (req, res) => {
   const productInstance = new ProductModel(productData);
   const SavedProduct = await productInstance.save();
 
-  res.send({ message: "Product Added.", ProductModel: SavedProduct });
+  res.status(202).send({ message: "Product Added.", ProductModel: SavedProduct });
 });
 
 Productrouter.put("/edit/:id", protect, async (req, res) => {

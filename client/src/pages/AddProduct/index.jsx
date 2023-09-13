@@ -66,7 +66,7 @@ const AddProduct = () => {
   return (
     <div>
       <Container className="rootContainer">
-        <h4>ADD PRODUCT FORM</h4>
+        <h4>ADD PRODUCT FORM.</h4>
         <TextField
           fullWidth
           value={productName}
