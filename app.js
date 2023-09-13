@@ -37,10 +37,10 @@ app.get("/jail", (req, res) => {
 });
 
 // const router = require("./routes/users");
-app.use("/users", userRoutes);
+// app.use("/users", userRoutes);
 app.use("/products", productRoutes);
 app.use("/upload" , orderRoutes)
-// app.post("/register", userRoutes.registerUser);
+app.post("/register", userRoutes.registerUser);
 // app.post("/login", userRoutes.loginUser);
 
 app.listen(PORT, () => console.log("Server is running on PORT " + PORT));
